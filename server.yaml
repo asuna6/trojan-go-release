@@ -1,0 +1,17 @@
+run-type: server
+local-addr: 0.0.0.0
+local-port: 2443
+remote-addr: 127.0.0.1
+remote-port: 2020
+password:
+  - gesneriana
+ssl:
+  cert: /root/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/jp.kizuna.top/jp.kizuna.top.crt
+  key: /root/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/jp.kizuna.top/jp.kizuna.top.key
+  sni: jp.kizuna.top
+router:
+  enabled: true
+  block:
+    - 'geoip:private'
+  geoip: ./geoip.dat
+  geosite: ./geosite.dat

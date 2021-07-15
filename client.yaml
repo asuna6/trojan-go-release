@@ -1,0 +1,19 @@
+run-type: client
+local-addr: 127.0.0.1
+local-port: 1082
+remote-addr: jp.kizuna.top
+remote-port: 2443
+password:
+    - gesneriana
+ssl:
+    sni: jp.kizuna.top
+mux:
+    enabled: true
+router:
+    enabled: true
+    bypass: ['geoip:cn', 'geoip:private', 'geosite:cn', 'geosite:private']
+    block: ['geosite:category-ads']
+    proxy: ['geosite:geolocation-!cn']
+    default_policy: proxy
+    geoip: ./geoip.dat
+    geosite: ./geosite.dat
