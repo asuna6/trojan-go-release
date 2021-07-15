@@ -17,3 +17,7 @@ router:
     default_policy: proxy
     geoip: ./geoip.dat
     geosite: ./geosite.dat
+websocket:
+  enabled: true
+  path: ws
+  host: jp.kizuna.top
