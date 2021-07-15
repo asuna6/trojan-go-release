@@ -1,22 +1,33 @@
 {
-    "run_type": "server",
-    "local_addr": "0.0.0.0",
-    "local_port": 2443,
-    "remote_addr": "127.0.0.1",
-    "remote_port": 2020,
+    "run_type": "client",
+    "local_addr": "127.0.0.1",
+    "local_port": 1082,
+    "remote_addr": "jp.kizuna.top",
+    "remote_port": 2443,
     "password": [
         "gesneriana"
     ],
     "ssl": {
-        "cert": "/root/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/jp.kizuna.top/jp.kizuna.top.crt",
-        "key": "/root/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/jp.kizuna.top/jp.kizuna.top.key",
         "sni": "jp.kizuna.top"
+    },
+    "mux": {
+        "enabled": true
     },
     "router": {
         "enabled": true,
-        "block": [
-            "geoip:private"
+        "bypass": [
+            "geoip:cn",
+            "geoip:private",
+            "geosite:cn",
+            "geosite:private"
         ],
+        "block": [
+            "geosite:category-ads"
+        ],
+        "proxy": [
+            "geosite:geolocation-!cn"
+        ],
+        "default_policy": "proxy",
         "geoip": "./geoip.dat",
         "geosite": "./geosite.dat"
     }
