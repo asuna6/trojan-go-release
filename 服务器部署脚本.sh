@@ -24,6 +24,6 @@ jp.kizuna.top {
 # }
 <<EOF
 
-# 初始化脚本：git clone https://git.kizuna.top/gesneriana/trojan-go-release.git
+# 初始化脚本：git clone https://github.com/asuna6/trojan-go-release.git
 # 同步脚本：cd ./trojan-go-release ; git pull
 # 启动脚本：pkill trojan-go ; cd ./trojan-go-release && chmod 777 ./trojan-go && ./trojan-go
